@@ -2,13 +2,14 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="css/themes/default/linkbutton.css">  
+	<link rel="stylesheet" type="text/css" href="css/themes/default/linkbutton.css">
+	<link rel="stylesheet" type="text/css" href="css/themes/default/validatebox.css">  
     <link rel="stylesheet" type="text/css" href="css/themes/icon.css">  
     <link rel="stylesheet" type="text/css" href="css/demo.css">  
     
-	<script src="js/jquery-1.8.0.js" type="text/javascript"></script>
-	<script src="js/jquery.easyui.min.js" type="text/javascript"></script>
-	<script src="js/index.js" type="text/javascript"></script>
+	<script type="text/javascript" src="<c:url value="/js/jquery-1.8.0.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/js/jquery.easyui.min.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/js/index.js" />"></script>
 		
 </head>
 <body>
@@ -25,7 +26,7 @@
 	<p align="center"><input id="busca" type="text"  style="width:500px;"/> <img src="img/search.png"/></p>
 	
 	
-	<div id="modal-vaga" title="Nova vaga" style="width:600px;height:400px"></div>  
+	<div id="modal-vaga" title="Nova vaga" style="width:600px;height:400px" ></div>  
 	<div id="modal-cv" title="Novo CV" style="width:600px;height:400px"></div>
 </body>
 </html>

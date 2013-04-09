@@ -34,5 +34,20 @@ public class VagaDAOImpl implements VagaDAO {
 		SessionFactory factory= HibernateUtil.getSessionFactory();
 		return factory.openSession();
 	}
+	
+	public boolean existeVagaComMesmoNome(Vaga vaga){
+		Session session = getSession();
+		Query query = session.createQuery(" from Vaga v where upper(nome) = upper(:nome) ");
+		query.setParameter("nome", vaga.getNome());
+		return query.list().size()>0;
+	}
+
+	public void update(Vaga vaga) {
+		Session session = getSession();
+		Transaction transaction = session.beginTransaction();
+		session.update(vaga);
+		transaction.commit();
+		
+	}
 
 }

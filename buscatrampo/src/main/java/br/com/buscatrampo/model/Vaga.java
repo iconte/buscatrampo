@@ -1,5 +1,6 @@
 package br.com.buscatrampo.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -10,7 +11,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -18,11 +18,19 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="vaga")
 @SequenceGenerator(name="vaga_seq")
-public class Vaga {
+public class Vaga implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
+	@Column(name="nome",nullable=false)
+	private String nome;
 	
 	@Column(nullable=false,name="local")
 	private String local;
@@ -42,10 +50,6 @@ public class Vaga {
 	
 	@Column(name="salario")
 	private BigDecimal salario;
-	
-	@Lob
-	@Column(name="planilha")
-	private byte[] planilha;
 	
 	public String getLocal() {
 		return local;
@@ -89,11 +93,11 @@ public class Vaga {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
-	public byte[] getPlanilha() {
-		return planilha;
+	public String getNome() {
+		return nome;
 	}
-	public void setPlanilha(byte[] planilha) {
-		this.planilha = planilha;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	

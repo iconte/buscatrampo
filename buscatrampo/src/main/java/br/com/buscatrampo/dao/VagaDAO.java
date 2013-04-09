@@ -9,4 +9,9 @@ public interface VagaDAO {
 	public List<Vaga> listarTodas();
 	
 	public void salvar(Vaga vaga);
+	
+	public boolean existeVagaComMesmoNome(Vaga vaga);
+	
+	public void update(Vaga vaga);
+	
 }
