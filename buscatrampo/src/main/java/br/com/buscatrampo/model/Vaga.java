@@ -35,7 +35,7 @@ public class Vaga implements Serializable{
 	@Column(nullable=false,name="local")
 	private String local;
 	
-	@Column(nullable=false,name="codigo")
+	@Column(name="codigo")
 	private String codigo;
 	
 	@Enumerated(EnumType.STRING)

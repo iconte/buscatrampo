@@ -10,7 +10,9 @@ import org.hibernate.Transaction;
 import br.com.buscatrampo.dao.VagaDAO;
 import br.com.buscatrampo.model.Vaga;
 import br.com.buscatrampo.util.HibernateUtil;
+import br.com.caelum.vraptor.ioc.Component;
 
+@Component
 public class VagaDAOImpl implements VagaDAO {
 
 	public List<Vaga> listarTodas() {
@@ -36,10 +38,7 @@ public class VagaDAOImpl implements VagaDAO {
 	}
 	
 	public boolean existeVagaComMesmoNome(Vaga vaga){
-		Session session = getSession();
-		Query query = session.createQuery(" from Vaga v where upper(nome) = upper(:nome) ");
-		query.setParameter("nome", vaga.getNome());
-		return query.list().size()>0;
+		return this.obterUnicaVagaPorNome(vaga.getNome()) !=null;
 	}
 
 	public void update(Vaga vaga) {
@@ -48,6 +47,12 @@ public class VagaDAOImpl implements VagaDAO {
 		session.update(vaga);
 		transaction.commit();
 		
+	}
+	public Vaga obterUnicaVagaPorNome(String nome){
+		Session session = getSession();
+		Query query = session.createQuery(" from Vaga v where upper(nome) = upper(:nome) ");
+		query.setParameter("nome", nome);
+		return (Vaga)query.uniqueResult();
 	}
 
 }

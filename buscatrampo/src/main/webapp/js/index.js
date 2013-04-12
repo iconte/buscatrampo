@@ -40,7 +40,8 @@ var indexView = {
 			  data:this.getDadosFormulario(),
 			  type:"POST"
 			}).done(function() {
-			 alert('ok');
+			 alert('sucesso');
+			 $("#modal-vaga").dialog('close');
 			});
     },
     
