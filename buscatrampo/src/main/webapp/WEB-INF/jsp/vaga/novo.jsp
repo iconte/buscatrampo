@@ -46,11 +46,21 @@
                 </tr>  
                 <tr>  
                     <td>Ramo:</td>  
-                    <td><input class="easyui-validatebox" type="text" name="vaga.ramo" id="ramo" data-options="required:true"></input></td>  
+                    <td>
+                    <select id="ramo">
+                    		<option value="-1"></option>
+                    		<c:forEach var="ramo" items="${ramos}">
+                    			<option value="<c:out value="${ramo.id}"/>"><c:out value="${ramo.descricao}"/></option>
+                    		</c:forEach>
+                    	</select>
+                    </td>  
                 </tr>  
                 <tr>  
                     <td>Local:</td>  
-                    <td><input class="easyui-validatebox" type="text" name="vaga.local" id="local" data-options="required:true"></td>  
+                    <td>
+                    	<input class="easyui-validatebox" type="text" name="vaga.local" id="local" data-options="required:true">
+                    	
+                    </td>  
                 </tr>  
                 <tr>  
                     <td>Descrição:</td>  

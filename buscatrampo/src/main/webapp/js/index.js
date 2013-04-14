@@ -9,7 +9,6 @@ var indexView = {
 	      width: 600,
 	      modal: true
 	    });
-		
 	},
 	
 	obterConteudoModalVaga:function(url){
@@ -25,7 +24,7 @@ var indexView = {
 		var vaga=[];
 		vaga.push({name:"vaga.nome",value: $("#titulo").val()});
 		vaga.push({name:"vaga.salario",value: $("#salario").val()});
-//		vaga.push({name:"vaga.ramo",value: $("#ramo").val()});
+		vaga.push({name:"vaga.ramo.id",value: $("#ramo").val()});
 		vaga.push({name:"vaga.local",value: $("#local").val()});
 		vaga.push({name:"vaga.descricao",value: $("#descricao").val()});
 		console.log(vaga);
@@ -45,15 +44,9 @@ var indexView = {
 			});
     },
     
-    
-    
-    
-    
     limpar:function(){
     	$('#formModalVaga').form('clear');  
     },
-    
-    
     
 //Modal cv
     abrirModalAdicionarCv:function(url){

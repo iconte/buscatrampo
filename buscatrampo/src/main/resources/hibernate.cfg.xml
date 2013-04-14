@@ -14,9 +14,10 @@
   		<property name="hibernate.c3p0.max_statements">50</property>
   		<property name="hibernate.c3p0.idle_test_period">3000</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
         
         <mapping class="br.com.buscatrampo.model.Vaga" />
         <mapping class="br.com.buscatrampo.model.Curriculo" />
+        <mapping class="br.com.buscatrampo.model.Ramo" />
     </session-factory>
 </hibernate-configuration>

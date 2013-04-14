@@ -1,5 +1,6 @@
 package br.com.buscatrampo.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -22,6 +23,7 @@ public class VagaDAOImpl implements VagaDAO {
 	}
 
 	public void salvar(Vaga vaga) {
+		vaga.setDataCriacao(new Date());
 		Session session =getSession(); 
 		salvarCurriculo(vaga, session);
 	}
