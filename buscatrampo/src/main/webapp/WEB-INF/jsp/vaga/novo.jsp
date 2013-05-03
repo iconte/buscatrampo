@@ -1,39 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<script type="text/javascript">
-	$('#titulo').validatebox({  
-	    required: true
-	});
-
-	$('#salario').numberbox({  
-	    min:0,  
-	    precision:2  
-	});
-
-	$('#salario').validatebox({  
-	    required: true  
-	});
-
-	$('#ramo').validatebox({  
-	    required: true  
-	});
-
-	$('#local').validatebox({  
-	    required: true  
-	});
-
-
-	$('#descricao').validatebox({  
-	    required: true  
-	});
-</script>
 
 
 	<c:url var="urlSalvar" value="/vaga/salvar"/>
     <div style="margin:10px 0;"></div>  
     <div class="easyui-panel" title="New Topic" style="width:400px">  
         <div style="padding:10px 0 10px 60px">  
-        <form id="formModalVaga" method="post" > 
          
             <table>  
                   <tr>  
@@ -68,12 +40,15 @@
                 </tr>
                  
             </table>  
-        </form>  
         </div>  
         <div style="text-align:center;padding:5px">  
-            <a href="javascript:indexView.salvar('<c:url value="/vaga/salvar"/>');" class="easyui-linkbutton l-btn" ><span class="l-btn-left">Salvar</span></a>  
-            <a href="javascript:indexView.limpar();" class="easyui-linkbutton l-btn" ><span class="l-btn-left">Limpar</span></a>  
-        </div>  
+            <a href="javascript:modalVaga.salvar('<c:url value="/vaga/salvar"/>');" class="easyui-linkbutton l-btn" ><span class="l-btn-left">Salvar</span></a>  
+            <a href="javascript:modalVaga.limpar();" class="easyui-linkbutton l-btn" ><span class="l-btn-left">Limpar</span></a>  
+        </div> 
+
+	 <!-- js -->        
+      <script type="text/javascript" src="<c:url value="/js/modalVaga.js" />"></script>
+     <!-- js --> 
     </div>  
       
 
