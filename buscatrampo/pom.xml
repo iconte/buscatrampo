@@ -7,6 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>buscatrampo Maven Webapp</name>
   <url>http://maven.apache.org</url>
+ 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -58,6 +59,12 @@
   </dependencies>
   <build>  
   		<finalName>buscatrampo</finalName>
-        <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>  
+        <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
+        <plugins>
+	      <plugin>
+	        <groupId>org.mortbay.jetty</groupId>
+	        <artifactId>maven-jetty-plugin</artifactId>
+		 </plugin>
+  		</plugins>   
     </build>  
 </project>
